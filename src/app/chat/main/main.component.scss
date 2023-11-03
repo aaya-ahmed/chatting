@@ -1,0 +1,11 @@
+.messages{
+    display: block;
+    min-height: calc(100% - 7.2rem);
+    max-height: calc(100% - 10.8rem);
+    overflow-y: auto;
+}
+.messageto{
+    display: block;
+    min-height: 3.6rem;
+    max-height: 7.2rem;
+}

@@ -1,0 +1,28 @@
+<form [formGroup]="loginform" class="informationform" (ngSubmit)="login()">
+    <div>
+        <h3>Account Login</h3>
+        <div>
+            <input type="email" formControlName="email" placeholder="email*"/>
+            <p class="invalid" *ngIf="emailControl.hasError('required')&&(emailControl.touched||submitted)">this field is required</p>
+        </div>
+        <div>
+            <input type="password" formControlName="password" placeholder="password*"/>
+            <p class="invalid" *ngIf="passwordControl.hasError('required')&&(passwordControl.touched||submitted)">this field is required</p>
+            <p  class="invalid">{{responceMessage}}</p>
+            <p><a [routerLink]="'/auth/forgetpassword'" class="link">Forget password</a></p>
+        </div>
+        <div *ngIf="!loading;then submit ;else loader">
+        </div>
+    </div>
+</form>
+<ng-template #submit>
+    <div>
+        <input type="submit" value="login"/>
+        <p>you don't have account?<a [routerLink]="'/auth/signup'" class="link">sign up</a></p>
+    </div>
+</ng-template>
+<ng-template #loader>
+    <div>
+        <img src="../../../assets/loader.svg"/>
+    </div>
+</ng-template>

@@ -1,0 +1,16 @@
+<app-chatheader 
+[currentchat]="type=='one'?currentFriend:currentGroup" 
+[type]="type" 
+(toggleSidebarEvent)="togglesidebar($event)"></app-chatheader>
+<app-messages 
+[type]="type" 
+[message]="currentmessage" 
+[chat]="type=='one'?currentFriend.chat:currentGroup.chatid" class="messages" id="messagelist" ></app-messages>
+<app-messageto 
+*ngIf="(!currentFriend.block&&type=='one')||(!currentGroup.block&&type!='one')" 
+(newchat)="setnewchat($event)"
+(Message)="setcurrentmessage($event)"
+[type]="type" 
+[chat]="type=='one'?currentFriend.chat:currentGroup.chatid" 
+[currentFriend]="currentFriend.friendId">
+</app-messageto>

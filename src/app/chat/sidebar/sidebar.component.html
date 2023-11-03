@@ -1,0 +1,28 @@
+<div class="fluid-container">
+    <ng-container [ngSwitch]="currentview">
+        <ng-container *ngSwitchCase="'friendList'">
+            <app-header (currentview)="setview($event)"></app-header>
+            <app-searching></app-searching>
+            <nav>
+                <ul>
+                    <li>
+                        <button (click)="getFriendsList()">friends</button>
+                    </li>
+                    <li>
+                        <button (click)="getGroupList()">groups</button>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <app-individuale *ngIf="listToggle"></app-individuale>
+                <app-groups *ngIf="!listToggle"></app-groups>
+            </section>
+        </ng-container>
+        <ng-container *ngSwitchCase="'groupForm'">
+            <app-groupform (currentview)="setview('friendList')"></app-groupform>
+        </ng-container>
+        <ng-container *ngSwitchCase="'updateprofileForm'">
+            <app-updateprofile (currentview)="setview('friendList')"></app-updateprofile>
+        </ng-container>
+    </ng-container>
+</div>

@@ -1,0 +1,24 @@
+<nav>
+    <ul class="mainList">
+        <li>
+            <i class="fa-solid fa-bars" (click)="togglesidebar()"></i>
+            <app-imageuser class="img" [type]="type" [url]="currentchat?.photo"></app-imageuser>
+        </li>
+        <li>
+            <span *ngIf="type=='one'">{{currentchat.firstName}} {{currentchat.lastName}}</span>
+            <span *ngIf="type=='group'">{{currentchat.name}}</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-ellipsis-vertical" (click)="changeToggleStatus()"></i>
+            <ul class="childlist" [ngClass]="{'show':toggle}" *ngIf="type=='one'">
+                <li *ngIf="!currentchat.block" (click)="blockchat()">Block User</li>
+                <li *ngIf="currentchat.block" (click)="unblockchat()">UnBlock User</li>
+                <li (click)="closechat()">Close Chat</li>
+            </ul>
+            <ul class="childlist" [ngClass]="{'show':toggle}" *ngIf="type=='group'">
+                <li (click)="leavegroup()">leave Group</li>
+                <li (click)="closechat()">Close Group</li>
+            </ul>
+        </li>
+    </ul>
+</nav>

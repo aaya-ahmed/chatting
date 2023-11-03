@@ -1,0 +1,13 @@
+<div class="container">
+    <aside [ngClass]="{'show':toggleSidebarFlag}">
+        <app-sidebar></app-sidebar>
+    </aside>
+    <main>
+        <ng-container *ngIf="chatexist">
+            <app-main></app-main>
+        </ng-container>
+        <ng-container *ngIf="!chatexist">
+            <div class="main-background"></div>
+        </ng-container>
+    </main>
+</div>

@@ -1,0 +1,30 @@
+.fluid-container{
+    display: block;
+    width: 350px;
+    nav{
+        width: 100%;
+        >ul{
+            display: flex;
+            >li{
+                width: 50%;
+                border-bottom: 1px solid black;
+                >button{
+                    width: 100%;
+                    padding: 1rem;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+                background-color: white;
+            }
+        }
+    }
+    section{
+        width: 100%;
+        background-color: white;
+        height: calc(100% - 6.65rem);
+        overflow-y: auto;
+    
+    }    
+}
+
+

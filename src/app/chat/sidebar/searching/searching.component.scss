@@ -1,0 +1,48 @@
+:host{
+    position: relative;
+}
+input{
+    width: 95%;
+    margin: 5px auto;
+    display: block;
+    padding: 0.6rem 0.3rem;
+    border-radius: 5px;
+}
+ul{
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+    height: 200px;
+    background-color: white;
+    box-shadow: 2px 2px 6px 0px #00000017;
+    overflow-y: auto;
+    display: none;
+    >li{
+        padding: 6px;
+        display: flex;
+        border-bottom: 1px solid black;
+        cursor: pointer;
+        >.image{
+            width: 50px;
+            height: 50px;
+            display: block;
+        }
+        >span{
+            line-height: 50px;
+            font-size: 20px;
+            padding-left: 5px;
+        }
+    }
+}
+.ulloading{
+    >li:nth-child(1){
+        justify-content: center;
+        >.loadingimg{
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+.show{
+    display: block;
+}

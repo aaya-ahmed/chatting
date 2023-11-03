@@ -1,0 +1,33 @@
+ul{
+    >li{
+        padding:0.7rem 0.3rem 0 0.3rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3px;
+        cursor: pointer;
+        .image{
+            width: 35px;
+            height: 35px;
+        }
+        >h5{
+            font-size: 20px;
+            >span{
+                display: block;
+                font-size: 12px;
+                font-weight: 300;
+            }
+        }
+    }
+    >li:hover{
+        background-color: rgba(128, 128, 128, 0.21);
+    }
+    >li::after{
+        display: block;
+        content: "";
+        padding-top: 0.7rem;
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.245);
+    }
+}

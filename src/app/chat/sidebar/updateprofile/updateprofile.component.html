@@ -1,0 +1,25 @@
+<header class="header">
+    <h5>
+        <i (click)="gobackstep()" class="fa-solid fa-arrow-left"></i>
+        Update Profile
+    </h5>
+</header>
+<main>
+    <form [formGroup]="user" class="formgroup">
+        <div class="image">
+            <label for="image">
+                <img [src]="photo.value"/>
+            </label>
+            <input type="file" id="image"/>
+        </div>
+        <div>
+            <input type="text" placeholder="First Name" formControlName="firstName"/>
+        </div>
+        <div>
+            <input type="text" placeholder="Last Name" formControlName="lastName"/>
+        </div>
+        <div>
+            <input type="password" placeholder="password" formControlName="password"/>
+        </div>
+    </form>
+</main>

@@ -1,0 +1,12 @@
+<input type="text" [(ngModel)]="email" (ngModelChange)="searchtext.next($event)" placeholder="search by email"/>
+<ul [ngClass]="{'show':loadingstate}" class="ulloading">
+    <li>
+        <img src="../../../assets/loader.svg" class="loadingimg"/>
+    </li>
+</ul>
+<ul [ngClass]="{'show':users.length}">
+    <li *ngFor="let item of users" (click)="openchat(item)">
+        <app-imageuser [url]="item.value.photo" class="image"></app-imageuser>
+        <span>{{item.value.firstName}} {{item.value.lastName}}</span>
+    </li>
+</ul>

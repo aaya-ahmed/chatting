@@ -1,0 +1,63 @@
+<form [formGroup]="registerform" class="informationform" (ngSubmit)="register()">
+    <div>
+        <h3>Account signup</h3>
+        <div>
+            <label for="photo">
+                <img src="../../../assets/userphoto.svg" #image/>
+            </label>
+            <input type="file" id="photo" formControlName="photo" placeholder="Photo*" accept="image/*" (change)="setPhoto($event)"/>
+        </div>
+        <div>
+            <input type="text" formControlName="firstName" placeholder="First Name*"/>
+            <ng-container *ngIf="firstNameControl.invalid&&(firstNameControl.touched||submitted)">
+                <p class="invalid" *ngIf="firstNameControl.hasError('required')">this field is required</p>
+                <p class="invalid" *ngIf="firstNameControl.hasError('pattern')">inavlid value</p>
+            </ng-container>
+        </div>
+        <div>
+            <input type="text" formControlName="lastName" placeholder="Last Name*"/>
+            <ng-container *ngIf="lastNameControl.invalid&&(lastNameControl.touched||submitted)">
+                <p class="invalid" *ngIf="lastNameControl.hasError('required')">this field is required</p>
+                <p class="invalid" *ngIf="lastNameControl.hasError('pattern')">inavlid value</p>
+            </ng-container>
+        </div>
+        <div>
+            <input type="email" formControlName="email" placeholder="email*"/>
+            <ng-container *ngIf="emailControl.invalid&&(emailControl.touched||submitted)">
+                <p class="invalid" *ngIf="emailControl.hasError('required')">this field is required</p>
+                <p class="invalid"  *ngIf="emailControl.hasError('email')">invalid email</p>
+            </ng-container>
+        </div>
+        <div>
+            <input type="password" formControlName="password" placeholder="password*"/>
+            <ng-container *ngIf="passwordControl.invalid&&(passwordControl.touched||submitted)">
+                <p class="invalid" *ngIf="passwordControl.hasError('required')">this field is required</p>
+                <p class="invalid" *ngIf="passwordControl.hasError('pattern')">value is invalid</p>
+            </ng-container>
+        </div>
+        <div>
+            <div>
+                <input type="text" formControlName="verifcationcode" placeholder="verifcation code*"/>
+                <ng-container *ngIf="verifcationcodeControl.invalid&&(verifcationcodeControl.touched||submitted)">
+                    <p class="invalid" *ngIf="verifcationcodeControl.hasError('required')">this field is required</p>
+                    <p class="invalid" *ngIf="verifcationcodeControl.hasError('pattern')">value is invalid</p>
+                </ng-container>
+            </div>
+            <input type="button" value="get code"/>
+        </div>
+        <p class="invalid">{{responcemessage}}</p>
+        <div *ngIf="!loading;then submit;else loader">
+        </div>
+    </div>
+</form>
+<ng-template #submit>
+    <div>
+        <input type="submit" value="sign up"/>
+        <p>you have account?<a [routerLink]="'/auth/login'" class="link">log in</a></p>
+    </div>
+</ng-template>
+<ng-template #loader>
+    <div>
+        <img src="../../../assets/loader.svg"/>
+    </div>
+</ng-template>

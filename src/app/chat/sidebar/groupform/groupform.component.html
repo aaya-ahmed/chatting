@@ -1,0 +1,82 @@
+<div class="header">
+    <h5>
+        <i (click)="gobackstep()" class="fa-solid fa-arrow-left"></i>
+        <span>Add Your Friends</span>
+    </h5>
+</div>
+<main>
+    <ng-container [ngSwitch]="step">
+        <form [formGroup]="groupform" class="formgroup">
+            <ng-container *ngSwitchCase="1">
+                <ul class="groupmember" *ngIf="groupusers.length>0">
+                        <li *ngFor="let item of groupusers">
+                            <span>{{item.firstName}} {{item.lastName}}</span>
+                            <span><i class="fa-solid fa-close"></i></span>
+                        </li>
+                </ul>
+                <input type="text" (change)="getfriend($event)"/>
+                <ul class="userslist">
+                    <li *ngFor="let item of filter;let index=index" (click)="addtogroup(index)">
+                        <app-imageuser class="image" [url]="item?.photo"></app-imageuser>
+                        <h5>
+                            {{item.firstName}} {{item.lastName}}
+                            <span></span>
+                        </h5>  
+                    </li>
+                    <li *ngFor="let item of filter;let index=index" (click)="addtogroup(index)">
+                        <app-imageuser class="image" [url]="item?.photo"></app-imageuser>
+                        <h5>
+                            {{item.firstName}} {{item.lastName}}
+                            <span></span>
+                        </h5>  
+                    </li>
+                    <li *ngFor="let item of filter;let index=index" (click)="addtogroup(index)">
+                        <app-imageuser class="image" [url]="item?.photo"></app-imageuser>
+                        <h5>
+                            {{item.firstName}} {{item.lastName}}
+                            <span></span>
+                        </h5>  
+                    </li>
+                    <li *ngFor="let item of filter;let index=index" (click)="addtogroup(index)">
+                        <app-imageuser class="image" [url]="item?.photo"></app-imageuser>
+                        <h5>
+                            {{item.firstName}} {{item.lastName}}
+                            <span></span>
+                        </h5>  
+                    </li>
+                    <li *ngFor="let item of filter;let index=index" (click)="addtogroup(index)">
+                        <app-imageuser class="image" [url]="item?.photo"></app-imageuser>
+                        <h5>
+                            {{item.firstName}} {{item.lastName}}
+                            <span></span>
+                        </h5>  
+                    </li>
+                    <li *ngFor="let item of filter;let index=index" (click)="addtogroup(index)">
+                        <app-imageuser class="image" [url]="item?.photo"></app-imageuser>
+                        <h5>
+                            {{item.firstName}} {{item.lastName}}
+                            <span></span>
+                        </h5>  
+                    </li>
+                </ul>
+                <button [disabled]="groupusers.length==0" (click)="gonextstep()"><i class="fa-solid fa-arrow-right"></i></button>
+            </ng-container>
+            <ng-container  *ngSwitchCase="2">
+                <div class="image">
+                    <label for="photo">
+                        <img [src]="image" #groupimage/>
+                    </label>
+                    <input type="file" id="photo"  placeholder="Photo*" accept="image/*" (change)="setPhoto($event)"/>
+                </div>
+                <div>
+                    <input type="text" formControlName="name" placeholder="group Name*"/>
+                    <ng-container *ngIf="groupform.controls['name'].invalid&&(groupform.controls['name'].touched)">
+                        <p class="invalid" *ngIf="groupform.controls['name'].hasError('required')">this field is required</p>
+                    </ng-container>
+                </div>
+                <button class="submit-btn" *ngIf="!submitted" [disabled]="groupform.invalid" (click)="creategroup()">create group</button>
+                <img src="../../../../assets/loader.svg" class="loader submit-btn"  *ngIf="submitted"/>
+            </ng-container>
+        </form>
+    </ng-container>    
+</main>

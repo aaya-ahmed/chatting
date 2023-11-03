@@ -1,0 +1,11 @@
+<div>
+    <form (ngSubmit)="sendMessage(message)">
+
+        <div role="textbox" contenteditable="true"  class="messageto" #message (keypress)="j($event)">
+        </div>
+        <!-- <input type="text" name="message" ngModel #message (keyup)="changeheight()" class="messageto"/> -->
+        <button>
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+    </form>
+</div>

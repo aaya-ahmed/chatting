@@ -1,0 +1,68 @@
+.header{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: flex-end;
+    background: #ea906c;
+    >h5{
+        font-size: 1.4em;
+        color: white;
+        padding: 0.7rem;
+    }
+}
+main{
+    height: calc(100% - 10rem);
+    .formgroup{
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        height: 100%;
+        position: relative;
+        input{
+            width: 95%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin: 0.3rem auto;
+            display: block;
+        }
+        button{
+            width: 3rem;
+            border-radius: 1.5rem;
+            display: block;
+            position: absolute;
+            margin: 0.5rem auto;
+            background-color: #ea906c;
+            height: 3rem;
+            bottom: 0;
+            left: calc(50% - 1.5rem);
+        }
+        .submit-btn{
+            width: fit-content;
+            height: 2rem;
+            padding: 0.3rem;
+            left: calc(50%);
+            transform: translateX(-50%);
+        }
+        >.image{
+            margin: 2rem;
+            >label{
+                width: 200px;
+                height: 200px;
+                display: block;
+                margin: auto;
+                >img{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            >input{
+                position: absolute;
+                z-index: -3;
+                visibility: hidden;
+                left: 0;
+            }
+        }
+    }
+}

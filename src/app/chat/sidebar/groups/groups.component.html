@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let item of groups" (click)="openchat(item)">
+        <app-imageuser class="image" [type]="'group'" [url]="item.photo"></app-imageuser>
+        <h5>
+            {{item.name}}
+            <span></span>
+        </h5>  
+    </li>
+</ul>

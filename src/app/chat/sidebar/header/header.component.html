@@ -1,0 +1,14 @@
+<nav>
+    <ul class="mainList">
+        <li>
+            <app-imageuser [url]="image" (click)="firecurrentview('updateprofileForm')"></app-imageuser>
+        </li>
+        <li>
+            <i class="fa-solid fa-ellipsis-vertical" (click)="changeToggleStatus()"></i>
+            <ul class="childlist" [ngClass]="{'show':toggle}">
+                <li (click)="firecurrentview('groupForm')">New Group</li>
+                <li (click)="logout()">Logout</li>
+            </ul>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,38 @@
+@import '../../../../../color.scss';
+.container{
+    width: 95%;
+    justify-content: flex-start;
+    margin: 1.5rem auto;
+    .message{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        p{
+
+            max-width: 50%;
+            background-color: $primary-color;
+            padding: 0.5rem;
+            border-radius:  0 10px 10px 10px;
+            white-space: pre-wrap;
+            position: relative;
+            overflow: initial;
+            margin-left: 2.6rem;
+            color: white;
+            word-break: break-all;
+
+        }
+        >p::after{
+            display: block;
+            content: "";
+            width: 0;
+            position: absolute;
+            border-left: 0.4rem solid transparent;
+            border-top: 0.4rem solid $primary-color;
+            border-right: 0.4rem solid $primary-color;
+            border-bottom: 0.4rem solid transparent;
+            left: 0;
+            top: 0;
+            transform: translateX(-100%);
+        }
+    }
+}

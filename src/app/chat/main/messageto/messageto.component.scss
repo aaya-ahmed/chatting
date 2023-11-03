@@ -1,0 +1,37 @@
+@import '../../../../color.scss';
+div{
+    min-height: 3.6rem;
+    max-height: 7.2rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $third-color;
+    form{
+        display: flex;
+        height: 100%;
+        padding:0.2rem;
+        align-items: center;
+        min-height: 3.6rem;
+        max-height: 7.2rem;
+        >.messageto{
+            display: block;
+            width: 90%;
+            min-height: 2.5rem;
+            max-height: 5rem;
+            padding: 0.3rem;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: white;
+            position:static;
+        };
+        >button{
+            width: 10%;
+            display: block;
+            background-color: transparent;
+            i{
+                color: white;
+            }
+            
+        }
+    }
+}

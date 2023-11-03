@@ -1,0 +1,124 @@
+.header{
+    width: 100%;
+    height: 10rem;
+    /* vertical-align: bottom; */
+    display: flex;
+    align-items: flex-end;
+    background: #ea906c;
+    >h5{
+        font-size: 1.4em;
+        color: white;
+        padding: 0.7rem;
+    }
+}
+main{
+    height: calc(100% - 10rem);
+    .formgroup{
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        height: 100%;
+        position: relative;
+        .userslist{
+            max-height: 50vh;
+            overflow: auto;
+            >li{
+                padding:0.7rem 0.3rem 0 0.3rem;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 3px;
+                cursor: pointer;
+                .image{
+                    width: 35px;
+                    height: 35px;
+                }
+                >h5{
+                    font-size: 20px;
+                    >span{
+                        display: block;
+                        font-size: 12px;
+                        font-weight: 300;
+                    }
+                }
+            }
+            >li:hover{
+                background-color: rgba(128, 128, 128, 0.21);
+            }
+            >li::after{
+                display: block;
+                content: "";
+                padding-top: 0.7rem;
+                width: 90%;
+                margin: auto;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.245);
+            }
+        }
+        .groupmember{
+            display: flex;
+            gap: 10px;
+            width: 95%;
+            max-height: 10vh;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0.5rem auto;
+            overflow: auto;
+            >li{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                padding: 0.3rem;
+                border-radius: 20px;
+                background: #f1f1f1;
+                height: fit-content;
+            }
+        }
+        input{
+            width: 95%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin: 0.3rem auto;
+            display: block;
+        }
+        button,.loader{
+            width: 3rem;
+            border-radius: 1.5rem;
+            display: block;
+            position: absolute;
+            margin: 0.5rem auto;
+            background-color: #ea906c;
+            height: 3rem;
+            bottom: 0;
+            left: calc(50% - 1.5rem);
+        }
+        .submit-btn{
+            width: fit-content;
+            height: 2rem;
+            padding: 0.3rem;
+            left: calc(50%);
+            transform: translateX(-50%);
+            display: block;
+        }
+        >.image{
+            margin: 2rem;
+            >label{
+                width: 200px;
+                height: 200px;
+                display: block;
+                margin: auto;
+                >img{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            >input{
+                position: absolute;
+                z-index: -3;
+                visibility: hidden;
+                left: 0;
+            }
+        }
+    }
+}
