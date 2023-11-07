@@ -58,6 +58,10 @@ export class AuthService {
   public resetpassword(code:string,password:string){
     return this.firebaseauth.confirmPasswordReset(code,password)
   }
+  public updatepassword(password:string){
+
+  }
+  
   public logout(){
     localStorage.clear()
     this.router.navigate(['/auth/login'])

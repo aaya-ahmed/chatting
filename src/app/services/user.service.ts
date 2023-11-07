@@ -41,6 +41,9 @@ export class UserService {
   public getCurrentUser(){
     return JSON.parse(localStorage.getItem('chattinguser')||'')
   }
-  public updateUser(){}
+  public updateUser(user:any){
+    return this.db.object(`${this.path}/${this.getCurrentUser().user}`).update(user)
+  }
+
   public deleteAccount(){}
 }

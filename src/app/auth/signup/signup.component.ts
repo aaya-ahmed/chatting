@@ -21,7 +21,6 @@ export class SignupComponent implements OnInit {
     lastName:new FormControl('',[Validators.required,Validators.pattern('^[a-z A-Z]{3,10}$')]),
     email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',[Validators.required,Validators.pattern('^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[# @ * & ^]).{8,}$')]),
-    verifcationcode:new FormControl('',[Validators.required,Validators.pattern('^[0-9]{4}$')])
   });
   imagecontroller:imagecontroller=new imagecontroller()
   get firstNameControl(){

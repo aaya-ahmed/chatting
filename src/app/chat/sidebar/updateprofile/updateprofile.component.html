@@ -5,12 +5,12 @@
     </h5>
 </header>
 <main>
-    <form [formGroup]="user" class="formgroup">
+    <form [formGroup]="user" class="formgroup" (ngSubmit)="update()">
         <div class="image">
             <label for="image">
-                <img [src]="photo.value"/>
+                <img [src]="image"/>
             </label>
-            <input type="file" id="image"/>
+            <input type="file" id="image" (change)="changephoto($event)"/>
         </div>
         <div>
             <input type="text" placeholder="First Name" formControlName="firstName"/>
@@ -20,6 +20,9 @@
         </div>
         <div>
             <input type="password" placeholder="password" formControlName="password"/>
+        </div>
+        <div>
+            <button class="btn">change</button>
         </div>
     </form>
 </main>

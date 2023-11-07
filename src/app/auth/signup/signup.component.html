@@ -35,16 +35,6 @@
                 <p class="invalid" *ngIf="passwordControl.hasError('pattern')">value is invalid</p>
             </ng-container>
         </div>
-        <div>
-            <div>
-                <input type="text" formControlName="verifcationcode" placeholder="verifcation code*"/>
-                <ng-container *ngIf="verifcationcodeControl.invalid&&(verifcationcodeControl.touched||submitted)">
-                    <p class="invalid" *ngIf="verifcationcodeControl.hasError('required')">this field is required</p>
-                    <p class="invalid" *ngIf="verifcationcodeControl.hasError('pattern')">value is invalid</p>
-                </ng-container>
-            </div>
-            <input type="button" value="get code"/>
-        </div>
         <p class="invalid">{{responcemessage}}</p>
         <div *ngIf="!loading;then submit;else loader">
         </div>
